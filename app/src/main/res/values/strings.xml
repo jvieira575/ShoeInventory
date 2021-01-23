@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- App name -->
+    <string name="app_name">Shoe Store Inventory</string>
+
+    <!-- Fragment titles -->
+    <string name="fragment_login_title">Shoe Store Inventory</string>
+    <string name="fragment_welcome_title">Welcome</string>
+    <string name="fragment_instructions_title">Instructions</string>
+    <string name="fragment_shoe_list_title">Shoe List</string>
+    <string name="fragment_shoe_detail_title">Shoe Detail</string>
+
+    <!-- Login screen -->
+    <string name="login_email_label_text">Email</string>
+    <string name="login_password_label_text">Password</string>
+    <string name="login_new_login_button_text">Sign Up</string>
+    <string name="login_existing_account_button_text">Log In</string>
+
+    <!-- Welcome screen -->
+    <string name="welcome_text">Hello!</string>
+    <string name="welcome_description_text">
+        Welcome to the Shoe Store app! This app was created for Udacity\'s Android Kotlin Nanodegree program and represents the first project of the course.\n\n
+        This project was built using Kotlin and is a multi-screen application that uses a navigation file to take the user through the app.\n\n
+        This project also uses ViewModels to observe changes to data.
+    </string>
+    <string name="welcome_next_button_text">Next</string>
+
+    <!-- Instruction screen -->
+    <string name="instruction_message_one_text">Instructions:</string>
+    <string name="instructions_next_button_text">Next</string>
+    <string name="instructions_text">How to Use the App</string>
+    <string name="instructions_message_text">
+        1) Proceed to the next screen to view your shoes.\n2) To add shoes, click the floating action button.\n3) Enter shoe details and click the save button.
+    </string>
+
+    <!-- Shoe List screen -->
+    <string name="shoe_list_content_description_add_shoe_floating_action_button">Add a shoe</string>
+    <string name="shoe_list_item_shoe_name_text">%s %s</string>
+    <string name="shoe_list_item_shoe_size_text">Size: %s</string>
+
+    <!-- Shoe Details screen -->
+    <string name="shoe_detail_shoe_name_label_text">Name:</string>
+    <string name="shoe_detail_shoe_company_label_text">Company:</string>
+    <string name="shoe_detail_shoe_size_label_text">Size:</string>
+    <string name="shoe_detail_shoe_description_label_text">Description:</string>
+    <string name="shoe_detail_cancel_button_text">Cancel</string>
+    <string name="shoe_detail_save_button_text">Save</string>
+
+    <!-- Menu -->
+    <string name="menu_shoe_listing_logout_text">Logout</string>
+
+</resources>

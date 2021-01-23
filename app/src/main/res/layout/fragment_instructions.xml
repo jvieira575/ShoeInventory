@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    I went with a LinearLayout here because I could create the layout I wanted without nesting
+    layouts in other layouts.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/instructions_fragment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".screens.instructions.InstructionsFragment"
+            tools:ignore="ScrollViewSize">
+
+            <TextView
+                android:id="@+id/instructions_text_view"
+                style="@style/headerTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/default_margin_top"
+                android:layout_marginBottom="@dimen/default_margin_bottom"
+                android:text="@string/instructions_text" />
+
+            <TextView
+                android:id="@+id/instructions_message_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/default_margin_start"
+                android:layout_marginEnd="@dimen/default_margin_end"
+                android:text="@string/instructions_message_text" />
+
+            <Button
+                android:id="@+id/instructions_next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginTop="@dimen/default_margin_top"
+                android:layout_marginEnd="@dimen/default_margin_end"
+                android:layout_marginBottom="@dimen/default_margin_bottom"
+                style="@style/primaryButtonStyle"
+                android:text="@string/instructions_next_button_text" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
