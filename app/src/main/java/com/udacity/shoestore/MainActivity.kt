@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
@@ -29,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         setSupportActionBar(binding.toolbar)
-        navController = findNavController(R.id.main_nav_host_fragment)
+
+        // Fragment is deprecated so use FragmentContainerView
+        //navController = findNavController(R.id.main_nav_host_fragment)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, args: Bundle? ->
             currentFocus?.hideKeyboard()
         }

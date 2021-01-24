@@ -42,14 +42,27 @@ class ShoeDetailFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.cancelShoeButton.setOnClickListener {  view ->
-            view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+
+            //Instead of navigating to new instance of ShoeListFragment(with pop actions to exclude from back stack),
+            // you can just use the findNavController().navigateUp() method, which would similarly navigate back
+            // by popping the next fragment from back-stack as we want to go back once user saves/cancels adding the new shoe
+
+            //view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            view.findNavController().navigateUp()
         }
 
         binding.saveShoeButton.setOnClickListener { view ->
             val shoeToAdd : Shoe? = binding.shoe
             if (shoeToAdd != null && shoeToAdd.company.isNotBlank() && shoeToAdd.name.isNotBlank() && shoeToAdd.description.isNotBlank()) {
                 shoeViewModel.addShoe(shoeToAdd)
-                view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+
+                //Instead of navigating to new instance of ShoeListFragment(with pop actions to exclude from back stack),
+                // you can just use the findNavController().navigateUp() method, which would similarly navigate back
+                // by popping the next fragment from back-stack as we want to go back once user saves/cancels adding the new shoe
+
+                //view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+                view.findNavController().navigateUp()
+
             } else {
                 Toast.makeText(requireContext(), "Please enter all details to save a shoe!", Toast.LENGTH_SHORT).show()
             }

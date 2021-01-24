@@ -52,7 +52,14 @@ class ShoeListFragment : Fragment() {
         // Using this type of navigation to prevent using the default behaviour of using the naming convention in menu item
         // I found that if you used the menu, it would navigate to the login screen but but hitting the back button would
         // return the user to this screen
-        this.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        //this.findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+
+        //Yes, navigate() creates a new instance of the destination Fragment. Here we would like to
+        // navigate back to login screen. You have correctly added the pop attributes in the main_navigation.xml
+        // file for the action_instructionsFragment_to_shoeListFragment action. So you can just use the method
+        // findNavController().navigateUp() that would go back to login screen and pressing the back button
+        // would exit the app, since there will be no more Fragment in the back-stack.
+        this.findNavController().navigateUp()
         return true
     }
 }
